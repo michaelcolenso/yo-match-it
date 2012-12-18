@@ -28,8 +28,8 @@ function startGame() {
 		};
 		$("#cards").children(".card").each(function(index) {
 			$(this).css({
-				"left" : ($(this).width() + 3) * (index % 6),
-				"top" : ($(this).height() + 2) * Math.floor(index/6)
+				"left" : ($(this).width() + 10) * (index % 6),
+				"top" : ($(this).height() + 10) * Math.floor(index/6)
 				});
 			var pattern = $(matchingGame.deck).get();
 			$(this).find(".back").addClass(pattern[index]);

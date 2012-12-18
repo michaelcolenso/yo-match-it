@@ -1,29 +1,24 @@
 body {
-	text-align: center;	
     font-family: 'Futura';
     background-color: #999;
     background: url(../images/debut_dark.png);
-	color: #777;
-	text-shadow: 0 1px 0 #222222;
+	color: #cccccc;
+	/*text-shadow: 0 1px 0 #ab2;*/
 }
 
 h1 {
-	font-size:45px;
-	font-weight: bold;
-	text-shadow: 0 3px 0 #222222;
-	height:50px;
+    color: #eeeeee;
+    padding-left: 10px;
 }
 
 #stats {
 	margin:0 auto;
+	padding-top:10px;
 	padding:5px;
-    width:850px;
-	height:24px;
-	border-radius:10px;
-	border:2px solid #ffffff;
-	font-size:1.2em;
+	font-size: 0.75em;
 	color:#ffffff;
-	margin-bottom:10px;
+    text-align: center;
+	margin-bottom: 10px;
 	}
 
 #stats span {
@@ -31,14 +26,6 @@ h1 {
 	}
 
 #game {
-    border-radius: 10px;
-    /*border: 1px solid #666666;*/
-    -webkit-box-shadow: 0 -1px 0 #999999, 0 1px 0 #999999, inset 0 1px 6px #000000;
-    -moz-box-shadow: 0 -1px 0 #999999, 0 1px 0 #999999, inset 0 1px 6px #000000;
-    -o-box-shadow: 0 -1px 0 #999999, 0 1px 0 #999999, inset 0 1px 6px #000000;
-    -ms-box-shadow: 0 -1px 0 #999999, 0 1px 0 #999999, inset 0 1px 6px #000000;
-    box-shadow: 0 -1px 0 #999999, 0 1px 0 #999999, inset 0 1px 6px #000000;
-    
     position: relative;
     width: 850px;
     height:374px;
@@ -57,7 +44,7 @@ h1 {
     -webkit-perspective:600;
     width: 125px;
     height: 175px;
-    
+
     /* changed    */
     position: absolute;
     transition: all .3s;
@@ -143,6 +130,7 @@ h1 {
     display:none\9;
 }
 
+    /*It's a spritesheet*/
 .sprite-YO12{ background-position: 0 0; width: 125px; height: 175px; } 
 .sprite-YO14{ background-position: 0 -176px; width: 125px; height: 175px; } 
 .sprite-YO22{ background-position: 0 -352px; width: 125px; height: 173px; } 
