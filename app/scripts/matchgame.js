@@ -10,22 +10,26 @@ function startGame() {
 		matchingGame.deck = $.merge(matchingGame, matchingGame);
 
 		if ($(".card:first-child").hasClass("first")) {
+
 				$(".card:first-child").removeClass("first");
 				$(".card:first-child").html('<div class="face front"></div><div class="face back"></div>');
 		};
+
 		$("#clicks, #pairs").text("0");
 
 		function shuffle() {
 			return 0.5 - Math.random();
 		};
+
 		matchingGame.deck.sort(shuffle);
-		for (var i=0;i<11;i++) {
+
+		for (var i=0;i< 11;i++) {
 			$(".card:first-child").clone().appendTo("#cards")
 		};
 		$("#cards").children(".card").each(function(index) {
 			$(this).css({
-				"left" : ($(this).width() + 1) * (index % 6),
-				"top" : ($(this).height() + 1) * Math.floor(index/6)
+				"left" : ($(this).width() + 3) * (index % 6),
+				"top" : ($(this).height() + 2) * Math.floor(index/6)
 				});
 			var pattern = $(matchingGame.deck).get();
 			$(this).find(".back").addClass(pattern[index]);
@@ -93,7 +97,8 @@ function checkPattern() {
 				$(".card-flipped").removeClass("card-flipped");
 			}
 		if ($("#cards").children().length == $("#cards").children(".card-removed").length) {
-			$("#go-2-nxt-lvl").html("<p>Game Finished!<br />Insert name and email address:<br /><form id='record-data'><table><tr><td><label for='name_value'>Name</label></td><td><input  type=text' id='name_value' value='' maxlength=15 /></td></tr><tr><td><label for='ea_value'>Email Address</label></td><td><input type=text' id='ea_value' value='' maxlength=35 /></td></tr></table></form><p>Note that, empty imput fields or with no valid email address will not be recorded</p>Click OK to restart the game.<br /><button id='reload'>OK</button></p>").fadeIn(1200);
+			$("#go-2-nxt-lvl").html("<p>Game Finished!<br /></p>Click OK to restart the game.<br /><button id='reload'>OK</button></p>").fadeIn(1200);
+            $("#slickrick").fadeIn(300);
 			$("#reload").on("click", function() {
 				$("#go-2-nxt-lvl").fadeOut(500);
 				setTimeout(function() {
