@@ -13,13 +13,18 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         
-        <link rel="stylesheet" href="styles/matchy.css">
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/matchy.css">
 
         <script src="scripts/vendor/modernizr.min.js"></script>
     </head>
     <body>
-        <div class="page-header"><h1>YO! MATCH IT!</h1></div>
+        <div class="page-header">
+          <h1>YO! MATCH IT!</h1>
+          <div id="stats">
+              <div>You've made <span id="clicks">0</span> clicks and found <span id="pairs">0</span> pair(s).</div>
+          </div>
+        </div>
 
     <div id="game">
         <div id="cards">
@@ -31,9 +36,6 @@
 
     </div>
 
-    <div id="stats">
-        <div>You've made <span id="clicks">0</span> clicks and found <span id="pairs">0</span> pair(s).</div>
-    </div>
 
     <div id="go-2-nxt-lvl"></div>
 

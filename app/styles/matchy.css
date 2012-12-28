@@ -2,24 +2,28 @@ body {
     font-family: 'Futura';
     background-color: #999;
     background: url(../images/debut_dark.png);
-	color: #cccccc;
-	/*text-shadow: 0 1px 0 #ab2;*/
 }
 
 h1 {
-    color: #eeeeee;
-    padding-left: 10px;
+    /*color: #eeeeee;*/
+}
+
+.page-header {
+  margin: 2%;
 }
 
 #stats {
-	margin:0 auto;
-	padding-top:10px;
-	padding:5px;
-	font-size: 0.75em;
-	color:#ffffff;
-    text-align: center;
-	margin-bottom: 10px;
+  font-size: 1.3em;
+  padding-top: 0%;
+  padding-right: 20%;
+  color: #32e34b;
 	}
+
+#go-2-nxt-lvl {
+  position: absolute;
+  top: 25%;
+  padding-left: 50%;
+}
 
 #stats span {
 	font-weight:bold
@@ -28,7 +32,7 @@ h1 {
 #game {
     position: relative;
     width: 850px;
-    height:374px;
+    /*height:374px;*/
     margin: 0 auto;
 }
 
@@ -63,6 +67,7 @@ h1 {
     
     -moz-transition-property: opacity, -moz-transform, -moz-box-shadow;
     -moz-transition-duration: .3s;
+
     -webkit-transition-property: opacity, -webkit-transform, -webkit-box-shadow;
     -webkit-transition-duration: .3s;
     -o-transition-property: opacity, -o-transform, -o-box-shadow;
@@ -71,7 +76,7 @@ h1 {
     -ms-transition-duration: .3s;
     transition-property: opacity, transform, box-shadow;
     transition-duration: .3s;
-    
+
     -moz-backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -o-backface-visibility: hidden;
@@ -79,12 +84,12 @@ h1 {
     backface-visibility: hidden    
 }
  
-.front {    
+.front {
     background: url(../images/yo-logo.jpg);
     /*width: 100%;*/
     z-index: 10;
 }
- 
+
 .back {
     background: url(../images/cards1.png);
     -moz-transform: rotate3d(0,1,0,-180deg);
@@ -109,7 +114,6 @@ h1 {
     -o-transform: rotate3d(0,1,0,180deg);
     -ms-transform: rotate3d(0,1,0,180deg);
     transform: rotate3d(0,1,0,180deg);
-    
     /* ensure the front face is below the back face */
     z-index: 8
 }
@@ -120,8 +124,7 @@ h1 {
     -o-transform: rotate3d(0,1,0,0deg);
     -ms-transform: rotate3d(0,1,0,0deg);
     transform: rotate3d(0,1,0,0deg);
-    
-    /* ensure the back face is on top of the front face */        
+    /* ensure the back face is on top of the front face */
     z-index: 10
 }
  
@@ -130,7 +133,7 @@ h1 {
     display:none\9;
 }
 
-    /*It's a spritesheet*/
+/*It's a spritesheet, yo.*/
 .sprite-YO12{ background-position: 0 0; width: 125px; height: 175px; } 
 .sprite-YO14{ background-position: 0 -176px; width: 125px; height: 175px; } 
 .sprite-YO22{ background-position: 0 -352px; width: 125px; height: 173px; } 
