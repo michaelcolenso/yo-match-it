@@ -134,17 +134,23 @@ function checkPattern() {
 		if ( $( "#cards" ).children().length == $( "#cards" ).children( ".card-removed" ).length ) {
 
       if ( gameLevel === 3 ) {
-        $( "#go-2-nxt-lvl" ).html( "<p>Game Finished!<br /></p>Click OK to restart the game.<br /><button id='reload'>OK</button></p>" ).fadeIn( 1200 );
+        $( "#go-2-nxt-lvl" ).html( "<p>Game Finished!<br /></p>Click OK to restart the game.<br /></p><p><button class='btn' id='reload'>OK</button></p>" ).fadeIn( 1200 );
 
       } else if ( gameLevel === 2 ) {
-        $( "#go-2-nxt-lvl" ).html( "<p>Level Complete!<br /></p>Click OK to go to level 3.<br /><button id='reload'>OK</button></p>" ).fadeIn( 1200 );
+        $( "#go-2-nxt-lvl" ).html( "<p>Level Complete!<br /></p>Click OK to go to level 3.<br /></p><p><button class='btn' id='reload'>OK</button></p>" ).fadeIn( 1200 );
 
       } else if ( gameLevel === 1 ) {
-        $( "#go-2-nxt-lvl" ).html( "<p>Level Complete!<br /></p>Click OK to go to level 2.<br /><button id='reload'>OK</button></p>" ).fadeIn( 1200 );
+        $( "#go-2-nxt-lvl" ).html( "<p>Level Complete!<br /></p>Click OK to go to level 2.<br /></p><p><button class='btn' id='reload'>OK</button></p>" ).fadeIn( 1200 );
       }
 
 			$( "#reload" ).on( "click", function() {
+        if ( gameLevel > 3 ) {
+          gameLevel = 1;
+        }
+
+        //set level to next gameLevel
         gameLevel++
+
 				$( "#go-2-nxt-lvl" ).fadeOut( 500 );
 				setTimeout( function () {
 					$( ".card:first-child" ).addClass( "first" ).removeClass( "card-removed noclick" );
@@ -184,6 +190,7 @@ function isMatchPattern () {
 
 //Remove cards from visual field
 function removeTookCards() {
+
 	$( ".card-removed" ).remove();
 }
 

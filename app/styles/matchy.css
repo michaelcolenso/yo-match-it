@@ -21,8 +21,13 @@ h1 {
 
 #go-2-nxt-lvl {
   position: absolute;
+  font-size: 2em;
   top: 25%;
   padding-left: 50%;
+}
+
+#reload {
+  padding: 3%;
 }
 
 #stats span {
@@ -81,12 +86,11 @@ h1 {
     -webkit-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
-    backface-visibility: hidden    
+    backface-visibility: hidden;
 }
- 
+
 .front {
     background: url(../images/yo-logo.jpg);
-    /*width: 100%;*/
     z-index: 10;
 }
 
