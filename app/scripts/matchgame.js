@@ -143,10 +143,8 @@ function checkPattern() {
         $( "#go-2-nxt-lvl" ).html( "<p>Level Complete!<br /></p>Click OK to go to level 2.<br /></p><p><button class='btn' id='reload'>OK</button></p>" ).fadeIn( 1200 );
       }
 
+      //Check to see if we are at the end of the game or not
 			$( "#reload" ).on( "click", function() {
-        if ( gameLevel > 3 ) {
-          gameLevel = 1;
-        }
 
         //set level to next gameLevel
         gameLevel++
@@ -157,13 +155,16 @@ function checkPattern() {
 					$( ".card" ).not( ".first" ).remove();
 					$( ".first" ).html();
 
-					var hs_value = $( "#clicks" ).text();
-					var name_value = $( "#name_value" ).val();
-					var ea_value = $( "#ea_value" ).val();
+          var hs_value = $( "#clicks" ).text();
+          var name_value = $( "#name_value" ).val();
+          var ea_value = $( "#ea_value" ).val();
 
-					//Pass to the script: name, email address and highscore value
-					$.post( "data/highscore.php?name=" + name_value + "&value=" + hs_value + "&email_add=" + ea_value );
+          //Pass to the script: name, email address and highscore value
+          $.post( "data/highscore.php?name=" + name_value + "&value=" + hs_value + "&email_add=" + ea_value );
 
+          if ( gameLevel >= 4 ) {
+                gameLevel = 1;
+            }
 					//Restart game
 					setTimeout( function () {
 						startGame()
