@@ -134,24 +134,27 @@ function checkPattern() {
 		if ( $( "#cards" ).children().length == $( "#cards" ).children( ".card-removed" ).length ) {
 
       if ( gameLevel === 3 ) {
-        $( "#go-2-nxt-lvl" ).html( "<p>Game Finished!<br /></p>Click OK to restart the game.<br /></p><p><button class='btn' id='reload'>OK</button></p>" ).fadeIn( 1200 );
+        $("#passport").css( 'height', '552px' );
+        $( "#passport" ).html( "<p>Game Finished!<br /></p>Click OK to restart the game.<br /></p><p><button class='btn' id='reload'>OK</button></p>" ).fadeIn( 1200 );
 
       } else if ( gameLevel === 2 ) {
-        $( "#go-2-nxt-lvl" ).html( "<p>Level Complete!<br /></p>Click OK to go to level 3.<br /></p><p><button class='btn' id='reload'>OK</button></p>" ).fadeIn( 1200 );
+        $("#passport").css( 'height', '552px' );
+        $( "#passport" ).html( "<p>Level Complete!<br /></p>Click OK to go to level 3.<br /></p><p><button class='btn' id='reload'>OK</button></p>" ).fadeIn( 1200 );
 
       } else if ( gameLevel === 1 ) {
         $("#passport").css( 'height', '552px' );
-        $( "#go-2-nxt-lvl" ).html( "<p>Level Complete!<br /></p>Click OK to go to level 2.<br /></p><p><button class='btn' id='reload'>OK</button></p>" ).fadeIn( 1200 );
+        $( "#passport" ).html( "<p>Level Complete!<br /></p>Click OK to go to level 2.<br /></p><p><button class='btn' id='reload'>OK</button></p>" ).fadeIn( 1200 );
       }
 
       //Check to see if we are at the end of the game or not
 			$( "#reload" ).on( "click", function() {
-
         //set level to next gameLevel
         gameLevel++
 
-				$( "#passport" ).fadeOut( 500 );
-				$( "#go-2-nxt-lvl" ).fadeOut( 500 );
+				$( "#passport" ).animate( { 
+          height: "0px"
+        }, 500 );
+        $( "#passport" ).fadeOut( 500 );
 				setTimeout( function () {
 					$( ".card:first-child" ).addClass( "first" ).removeClass( "card-removed noclick" );
 					$( ".card" ).not( ".first" ).remove();

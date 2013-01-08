@@ -9,9 +9,12 @@ h1 {
 }
 
 #passport {
-  background: url(../images/passport.png) 0 0 no-repeat;
+  position: relative;
+  background: url("?holder.js/400x400/text:this is custom placeholder text dude") no-repeat;
   top: 25%;
+  width: 100%;
   height: 0;
+  margin: 0 auto 0 auto;
 }
 
 /*.page-header {*/
