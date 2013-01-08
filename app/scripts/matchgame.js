@@ -140,6 +140,7 @@ function checkPattern() {
         $( "#go-2-nxt-lvl" ).html( "<p>Level Complete!<br /></p>Click OK to go to level 3.<br /></p><p><button class='btn' id='reload'>OK</button></p>" ).fadeIn( 1200 );
 
       } else if ( gameLevel === 1 ) {
+        $("#passport").css( 'height', '552px' );
         $( "#go-2-nxt-lvl" ).html( "<p>Level Complete!<br /></p>Click OK to go to level 2.<br /></p><p><button class='btn' id='reload'>OK</button></p>" ).fadeIn( 1200 );
       }
 
@@ -149,18 +150,19 @@ function checkPattern() {
         //set level to next gameLevel
         gameLevel++
 
+				$( "#passport" ).fadeOut( 500 );
 				$( "#go-2-nxt-lvl" ).fadeOut( 500 );
 				setTimeout( function () {
 					$( ".card:first-child" ).addClass( "first" ).removeClass( "card-removed noclick" );
 					$( ".card" ).not( ".first" ).remove();
 					$( ".first" ).html();
 
-          var hs_value = $( "#clicks" ).text();
-          var name_value = $( "#name_value" ).val();
-          var ea_value = $( "#ea_value" ).val();
+          //var hs_value = $( "#clicks" ).text();
+          //var name_value = $( "#name_value" ).val();
+          //var ea_value = $( "#ea_value" ).val();
 
           //Pass to the script: name, email address and highscore value
-          $.post( "data/highscore.php?name=" + name_value + "&value=" + hs_value + "&email_add=" + ea_value );
+          //$.post( "data/highscore.php?name=" + name_value + "&value=" + hs_value + "&email_add=" + ea_value );
 
           if ( gameLevel >= 4 ) {
                 gameLevel = 1;
